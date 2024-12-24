@@ -22,5 +22,5 @@ jobs:
           TARGET: ${{ secrets.REMOTE_TARGET }}
           SCRIPT_AFTER: |
             cd ${{ secrets.REMOTE_TARGET }}
-            sudo docker build -t test/escola:1.0.0 .
-            sudo docker run test/escola:1.0.0 -d
+            docker build UID=1000 GID=1000 -t test/escola:1.0.0 .
+            docker run UID=1000 GID=1000 test/escola:1.0.0 -d
